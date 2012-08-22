@@ -1,0 +1,44 @@
+
+**********************************************************************************
+This work is the outcome of a three-months internship at the Aalto University Data Communication Software lab. The ultimate purpose of this ongoing research is the optimization of the WiFi interface operation resulting in battery energy savings.
+********************************************************************************** 
+
+
+Before you move on make sure :
+
+1) You have the Android SDK installed on your machine (suggestion: use the Android SDK in conjunction with Eclipse and Android Developer Tools)
+
+http://developer.android.com/sdk/index.html
+http://developer.android.com/tools/help/adt.html
+
+
+2) You have read and understood the use of Android Debug Bridge (adb)
+
+http://developer.android.com/tools/help/adb.html
+
+
+3) You have rooted you handset
+
+http://nexusshacks.com/nexus-s-root/how-to-root-nexus-s-or-nexus-s-4g-on-ics-or-gingerbread/   (for Nexus S obviously)
+
+
+4) You have installed busybox on your handset. 
+
+http://www.busybox.net/
+https://play.google.com/store/apps/details?id=com.jrummy.busybox.installer&hl=en
+
+
+5) You have understood how the Android Open Source Project(AOSP) is set up.
+
+ http://source.android.com/source/initializing.html
+
+
+6) You have understood what the Native Development Kit (NDK) is and how you can use it to build native code for Android.
+
+ http://developer.android.com/tools/sdk/ndk/index.html
+
+
+
+
+
+More details of this project setup and instructions on how to run the software are available on each subdirectory README.

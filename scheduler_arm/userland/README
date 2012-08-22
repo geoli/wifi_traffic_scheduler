@@ -1,0 +1,29 @@
+Building userland native software with Android NDK.
+
+
+"The NDK is a toolset that allows you to implement parts of your app using native-code languages such as C and C++. For certain types of apps, this can be helpful so that you may reuse existing code libraries written in these languages and possibly increased performance." 
+More here http://developer.android.com/tools/sdk/ndk/index.html
+
+
+How the scheduler and replayer were built.
+------------------------------------------
+
+1) Get Android platform source code, in case of extra libraries need not formally supported by Google (the case of libpcap)
+
+Not all of the ordinary Linux libraries are supported by Android since a subset of them are considered stable. In that case, the Android platform source should be downloaded to get the source code of additional libraries that you might need to build your native software. That is the case for libpcap, as well. The libpcap for Android is available here https://android.googlesource.com/platform/external/libpcap
+
+ Choose the right version of the software based on the target device model. Follow the rules here http://source.android.com/source/downloading.html to clone the source files and checkout the right branch of software. After that, the platform code should be available on the file system. Now, extra libraries code should be available under <PlatformSourceDirectory>/external/ , where PlatformSourceDirectory is the directory you have checked out the platform source.
+
+
+2) Get Android Native Development Kit - NDK
+
+To build native userspace software for Android follow this http://developer.android.com/tools/sdk/ndk/index.html
+
+
+Some more details.
+------------------
+
+The user space program consists of three .c source files, namely the scheduler.c, the replay_pcap.c and the ts_pcap.c . Both scheduler.c and replay_pcap.c use their own main() thus we build two different Android projects on Eclipse. Furthermore, both of them take advantage of ts_pcap.c which includes pcap.h header file, consequently both Android projects' native code must be linked against libpcap. By default, the 'android' import directory and all of its subdirectories are reserved for NDK usage. Under this directory all the imported modules (libraries) should be placed. The same holds for libpcap, whose source files were put under <NDK_MODULE_PATH>/sources/android/native_libpcap . When writing the Android.mk for building the sources, the 'call import-module' directive will provide the mean to link the libpcap library against those sources and finally to compile them successfully. 
+
+
+

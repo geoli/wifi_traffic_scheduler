@@ -1,0 +1,92 @@
+Loadable Kernel Module. 
+
+*******************Current setup*****************
+Host (Linux build environment): 3.2.0-29-generic #46-Ubuntu SMP UTC 2012 x86_64
+                                x86_64 x86_64 GNU/Linux
+Target (Nexus S)
+   Build Number : IMM76D(Info available at  Settings-->About phone)
+   Repo Tag     : android-4.0.4_r1.1
+   Notes        : Nexus S, Nexus S 4G, Galaxy Nexus
+
+more info on build numbers available here : http://source.android.com/source/build-numbers.html
+
+*******************Compile***********************
+Use 'make' to build the module source code. 
+
+
+*******************Usage*************************
+Open terminal on host and run the following commands:
+
+'adb shell' --on host, to open remote shell to the Android devices connected to your machine (requires adb installed on host)
+
+'su' --on the Android remote shell(requires a rooted phone to be granted superuser privileges)
+
+On the host terminal: 
+
+-- 'push host/dir/compiled_kernel_module.ko /target/module_dir/' 
+   (usually target --> /data)
+-- insmod target/module_dir/k_flow_control.ko target=<TARGET_IP> 
+
+Whenever an utility is not supported by the Android shell use busybox instead.
+
+
+ 
+
+
+*****Steps to follow when your target is different***************
+
+In case you want to run the whole scheduler software on a different Android platform, you probably need to compile the kernel module targeting that platform.
+
+
+Elements required to build the module against another custom kernel:
+--------------------------------------------------------------------
+
+1) A custom toolchain that would target the specific Android architercture - in our occasion a toolchain for ARM architecture. This toolchain contains all the utilities (gcc compilers and more) that target Android intrinsic characteristics.
+
+   --Available here http://source.android.com/source/downloading.html
+   --An example here http://liassas.pbworks.com/w/page/55132017/05-06%20July
+
+
+2) A custom kernel to build your LKM against. Any Android custom kernel is available on Android kernel repos. 
+
+    --Android kernel repos here https://android.googlesource.com/?format=HTML
+      --Example: https://android.googlesource.com/kernel/samsung (for Samsung)
+    -- A HowTo for getting the kernel source tree :http://source.android.com/source/building-kernels.html
+
+
+3) A Makefile. It will combine all the elements needed for the module to get compiled (including cross-compiler from the toolchain specified, the kernel to compile against and others.)
+
+
+
+Steps to build the LKM.(example tailored to Android Nexus S)
+------------------------------------------------------------
+
+1) Build the custom kernel you got from Android Kernel repos.
+
+Browse to the kernel source tree root.
+
+  'make ARCH=arm herring_defconfig' , to create the .config under the kernel source root directory, so as to be able to continue configuring the kernel before building. 
+
+  ARCH=arm make menuconfig , to check any other kernel option that one wishes. Save it. The kernel is ready to get compiled. 
+
+  ARCH=arm make, to compile the kernel.  
+
+
+2)Set the LKM Makefile parameters.
+
+  Specify the cross-compiler from the downloaded toolchain.
+
+  Specify the Android Kernel build.
+
+  Specify the CPU architecture you target to compile against.
+
+
+
+3) Compile the kernel module.
+
+  Go into the dir where the Makefile resides and run 'make ' 
+
+
+An almost completed example availabe here:
+http://finsframework.org/mediawiki/index.php/Android#Configuring_a_Prebuilt_Cross-Compiler_Toolchain
+

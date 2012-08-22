@@ -1,0 +1,19 @@
+*******************Current setup*****************
+Host (Linux build environment): 3.2.0-29-generic #46-Ubuntu SMP UTC 2012 x86_64
+                                x86_64 x86_64 GNU/Linux
+Android NDK : android-ndk-r8
+
+Android SDK : Android 4.1(API 16)
+
+
+
+*******************Compile***********************
+The Android.mk file describes the source files and their dependencies to the Android custom build system.
+
+1) Make sure that you have placed the native_libpcap (available at the parent directory) under  <NDK_MODULE_PATH>/sources/android/
+
+2) Move to the project root directory and run 'ndk-build' to build the source code and link against the static libpcap library, provided that the path to the ndk-build executable is set in your PATH (otherwise specify the path to the ndk-build executable). After that, the build should be successful and the executables should be placed under <ProjectRootDir>/libs/armeabi/ 
+
+
+More info : <NDK_MODULE_PATH>/docs
+            http://rxwen.blogspot.fi/2010/02/native-programming-with-android.html
