@@ -1,0 +1,34 @@
+*****************WiFi Profiler******************
+
+The wifi profiler is the outcome of the attempt to measure the energy consumption of WiFi interface on each of its states (TR_RX, Idle, Sleep, Off) on an Android handset. 
+
+By default, when this application is launched it sets the handset in Airplane mode. However, the user can activate the WiFi interface at his wish. In that way it is assured that no other networks or services(GPS, 3G, GSM, Bluetooth) will interfere with the measurements. 
+Automatic deactivation of other apps or background services that might initiate network transactions during measurements are not handled by the app. The user is suggested to test this issue manually by checking the running apps and services before commencing of experiments.  
+
+The WiFi Profiler comes with a simple user interface, where the user can choose the WiFi state that he wants to test. There are three options. 
+
+1) WiFi Off: It disables the WiFi. 
+
+2) WiFi Sleep: It prevents the interface from going to sleep after a time interval of inactivity
+
+3) WiFi Tx_Rx: It sets the WiFi interface on transreceiving mode by utilizing an aggressive ping initiation for one minute. The aggressive ping has the advantage of keeping the interface busy continuously for one minute without exhausting the CPU. On that mode, the app also deactivates the screen while the ping is running and the screen timeout is reset after the WiFi profiler termination.
+
+
+After the state is chosen, the user has to press the user interface button for the changes to get in effect. 
+
+
+
+Now the energy measurements of WiFi interface can start. 
+
+
+*******************************How To***************************************
+
+You can use it through Eclipse and open it as a project from existing code. 
+
+File > New > Project >Android Project from Existing Code, press Next, 
+browse to the project root directory and then press Finish. 
+
+It might be necessary to Clean the project before you be able to run it. At
+the top menu bar of Eclipse tap on Project > Clean..
+
+

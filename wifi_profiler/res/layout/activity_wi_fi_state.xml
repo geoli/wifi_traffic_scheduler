@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <RelativeLayout
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:background="#ffffff" >
+ 
+        <!--  Header  Starts-->
+        <LinearLayout android:id="@+id/header"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@layout/header_gradient"
+                android:paddingTop="5dip"
+                android:paddingBottom="5dip">
+                <!-- Logo Start-->
+                <ImageView android:src="@drawable/wifi_logo"
+                           android:layout_width="wrap_content"                            
+                           android:layout_height="50dip"
+                           android:layout_marginLeft="100dip"/>
+                <!-- Logo Ends -->
+        </LinearLayout>
+        <!--  Header Ends -->
+        
+        <!-- Footer Start -->
+        <LinearLayout android:id="@+id/footer"
+                android:layout_width="fill_parent"
+                android:layout_height="80dip"
+                android:background="@layout/header_gradient"
+                android:layout_alignParentBottom="true">
+        </LinearLayout>
+        <!-- Footer Ends -->
+ 
+        <LinearLayout
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:padding="10dip"
+          android:layout_below="@id/header">
+          
+          
+          
+          <!-- WiFi modes label -->
+          <TextView 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#372c24"
+                android:text="@string/top_textview"/>
+          <Spinner  
+			   android:layout_width="fill_parent"  
+			   android:layout_height="wrap_content"
+			   android:layout_marginTop="5dip"
+               android:layout_marginBottom="20dip"
+			   android:id="@+id/spinner1"  
+		       android:entries="@array/modetypes"/>
+          
+          
+          <Button
+                android:id="@+id/ButtonRegister"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:onClick="setWiFiMode"
+                android:text="@string/submitbutton"/>
+          
+          
+          
+          <TextView 
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dip"
+                android:layout_marginBottom="10dip"
+                android:textColor="#372c24"
+                android:text="Dummy logger: "/>
+          
+          
+          <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="fill_parent"
+					  android:layout_height="fill_parent"
+					  android:fillViewport="true" >
+					          
+              
+              <TextView
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_marginTop="5dip"
+                android:layout_marginBottom="20dip"   
+                android:id="@+id/logger"
+		        android:hint="Output"/>
+          
+          
+          </ScrollView>    
+              
+        </LinearLayout>
+  </RelativeLayout>

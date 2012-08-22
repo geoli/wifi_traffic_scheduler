@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">WiFiStateDetector</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_wi_fi_state">WiFiStateActivity</string>
+    <string name="top_textview">Choose custom WiFi mode:</string>
+
+    <string name="mode_off">WiFi Off</string>
+    <string name="mode_sleep">WiFi Sleep</string>
+    <string name="mode_tx_rx">WiFi Ping</string>
+    
+    <string name="submitbutton">Set WiFi mode</string>
+    
+</resources>
