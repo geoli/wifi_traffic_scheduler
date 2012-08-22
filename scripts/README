@@ -1,0 +1,19 @@
+**************Scripts*****************
+
+Both scripts need a CSV file as input. They will only consider the values of the 2nd column and will apply operations only on that values.
+
+These scripts are intended for calculating results on energy measurements conducted with Monsoon Power Monitor. CSV files can be produced by Monsoon Power Monitor by utilizing the GUI. Use the 'Export' button to achieve that.
+
+
+--statistics.sh
+
+It will get an CSV file as input and it will return the Mean, Standard Deviation and Standard Error of the second column values.
+
+
+--total_energy.sh
+
+It will get an CSV file as input and it will return the sum of all values under the second column. 
+
+
+
+
