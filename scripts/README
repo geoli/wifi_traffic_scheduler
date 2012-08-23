@@ -15,5 +15,7 @@ It will get an CSV file as input and it will return the Mean, Standard Deviation
 It will get an CSV file as input and it will return the sum of all values under the second column. 
 
 
+--nexusdetection.sh 
 
+Usually you have to set the persmissions for the phone being plugged in. This script will take care of it only for Samsung Nexus S. Run the script as superuser. Once you have run it unplug it and plug it in again. Now, running 'adb devices' on the command prompt your device should be recognized.
 
