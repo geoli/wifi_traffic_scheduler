@@ -66,9 +66,9 @@ Browse to the kernel source tree root.
 
   'make ARCH=arm herring_defconfig' , to create the .config under the kernel source root directory, so as to be able to continue configuring the kernel before building. 
 
-  ARCH=arm make menuconfig , to check any other kernel option that one wishes. Save it. The kernel is ready to get compiled. 
+  'ARCH=arm make menuconfig' , to check any other kernel option that one wishes (optional). Save it. The kernel is ready to get compiled. 
 
-  ARCH=arm make, to compile the kernel.  
+  'ARCH=arm make', to compile the kernel.  
 
 
 2)Set the LKM Makefile parameters.

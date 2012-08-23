@@ -2,7 +2,7 @@
 
 obj-m += k_flow_control.o
 # the parent dir of kernel source root dir
-BASEDIR	= ~/nexusKernel 
+BASEDIR	= ~/nexusKernel
 export BASEDIR
 # the kernel source root dir
 KDIR	= samsung/
